@@ -26,16 +26,16 @@
             </div>
             
             <div class="thumbs">
-                <div v-for="photo in photos"  class="thumb" :class="i === activePhoto ? 'active': ''" :key="i" >
+                <div v-for="photo, i in photos"  class="thumb" :class="i === activePhoto ? 'active': ''" :key="i" >
                     <img :src="photo.image" :alt="photo.title">
                 </div>
                 
 
-                <div class="prev">
+                <div @click="prevPhoto" class="prev">
                     <i class="fas fa-chevron-up"></i>
                 </div>
 
-                <div class="next">
+                <div @click="nextPhoto" class="next">
                     <i class="fas fa-chevron-down"></i>
                 </div> 
             </div>
